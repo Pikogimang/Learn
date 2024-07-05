@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="id">
-<!DOCTYPE html>
-<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -66,19 +64,18 @@
         <form action="https://formsubmit.co/hatiu48@gmail.com" method="POST">
             <input type="hidden" name="_subject" value="Jawaban Baru dari Form 'Jawab Jujur'">
             <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://pikogimang.github.io/thanks.html">
             
             <div class="question">
-                <label>1. Apa cita-citamu?</label>
-                <input type="text" name="Cita-cita" placeholder="Ketik jawabanmu di sini">
+                <label for="cita-cita">1. Apa cita-citamu?</label>
+                <input type="text" id="cita-cita" name="Cita-cita" placeholder="Ketik jawabanmu di sini" required>
             </div>
             <div class="question">
-                <label>2. Apa makanan Favoritmu?</label>
-                <input type="text" name="Makanan Favorit" placeholder="Ketik jawabanmu di sini">
+                <label for="makanan-favorit">2. Apa makanan Favoritmu?</label>
+                <input type="text" id="makanan-favorit" name="Makanan_Favorit" placeholder="Ketik jawabanmu di sini" required>
             </div>
             <div class="question">
-                <label>3. Apa hobimu?</label>
-                <input type="text" name="Hobi" placeholder="Ketik jawabanmu di sini">
+                <label for="hobi">3. Apa hobimu?</label>
+                <input type="text" id="hobi" name="Hobi" placeholder="Ketik jawabanmu di sini" required>
             </div>
             <button type="submit" class="submit">KIRIM</button>
         </form>
