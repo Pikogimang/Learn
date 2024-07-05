@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jawab Jujur</title>
+    <style>
+        body {
+            background-color: #1c1c1e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        .container {
+            background-color: #2c2c2e;
+            border-radius: 20px;
+            padding: 20px;
+            width: 300px;
+        }
+        h2 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        .emoji {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        input[type="text"], input[type="range"] {
+            width: 95%;
+            padding: 8px;
+            margin-top: 5px;
+            background-color: #3a3a3c;
+            border: none;
+            border-radius: 10px;
+            color: white;
+        }
+        .submit {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #32CD32;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Jawab Jujur</h2>
+        <div class="emoji">😡😡😡</div>
+        <form action="send_email.php" method="post">
+            <div class="question">
+                <label>1. Apa cita-citamu?</label>
+                <input type="text" name="cita_cita" placeholder="Ketik jawabanmu di sini">
+            </div>
+            <div class="question">
+                <label>2. Apa makanan Favoritmu?</label>
+                <input type="text" name="makanan_favorit" placeholder="Ketik jawabanmu di sini">
+            </div>
+            <div class="question">
+                <label>3. Apa hobimu?</label>
+                <input type="text" name="hobi" placeholder="Ketik jawabanmu di sini">
+            </div>
+            <button type="submit" class="submit">KIRIM</button>
+        </form>
+        <p style="text-align: center; margin-top: 10px;">©ByPiko</p>
+    </div>
+</body>
+</html>
