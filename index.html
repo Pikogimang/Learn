@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertanyaan Cinta</title>
+    <style>
+        body {
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background-color: #333;
+            border-radius: 20px;
+            padding: 20px;
+            width: 80%;
+            max-width: 300px;
+            text-align: center;
+        }
+        .question1 {
+            margin-bottom: 15px;
+            }
+        h2, h1 {
+            color: white;
+            margin-top: 0;
+            font-size: 0.7cm; /* Sama ukuran font */
+        
+        }
+        h9 {
+           color: white;
+           margin-top: 0;
+           margin-bottom: 20px;
+           font-size = 0.0.1;
+        }
+        .button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #555;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .submit {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #32CD32;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 id="question">Hallo Sayang<br>Apakah Kamu mencintai ku?</h2>
+        <button class="button" id="iyaButton" onclick="changeIya()">Iyaaa</button>
+        <button class="button" id="tidakButton" onclick="changeTidak()">Tidak</button>
+ <div class="question1">
+     <label><h9>©ByPiko</h9></label>
+     </div>
+   </div>
+    <script>
+        function changeIya() {
+            const button = document.getElementById('iyaButton');
+            const question = document.getElementById('question');
+            if (button.innerHTML === "Iyaaa") {
+                question.innerHTML = "<h1>Makasih<br>Aku Juga Mencintaimu</h1>";
+                button.innerHTML = "Aww";
+            } else if (button.innerHTML === "Aww") {
+                question.innerHTML = "<h1>I Love You</h1>";
+                button.innerHTML = "I Love You Too";
+                document.getElementById('tidakButton').style.display = 'none';
+            } else if (button.innerHTML === "I Love You Too") {
+                goToNextPage()
+                
+            }
+        }
+
+        function changeTidak() {
+            const button = document.getElementById('tidakButton');
+            const question = document.getElementById('question');
+            if (button.innerHTML === 'Tidak') {
+                question.innerHTML = "<h1>ERROR!!!!<br>😏</h1>";
+                button.innerHTML = "Wlee";
+            } else if (button.innerHTML === "Wlee") {
+                question.innerHTML = "<h1>JANGAN NGEYEL<br>😡😡😡</h1>";
+                button.innerHTML = "😽🚫😼";
+            }
+        }
+        
+        function goToNextPage() {
+            window.location.href = 'soal.html'; // Ganti dengan nama file tujuan Anda
+        }
+    </script>
+</body>
+  </html>
+  
