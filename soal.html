@@ -34,7 +34,7 @@
         .question {
             margin-bottom: 15px;
         }
-        input[type="text"], input[type="range"] {
+        input[type="text"] {
             width: 95%;
             padding: 8px;
             margin-top: 5px;
@@ -61,7 +61,7 @@
     <div class="container">
         <h2>Jawab Jujur</h2>
         <div class="emoji">😡😡😡</div>
-        <form action="https://formspree.io/f/xnnaqgkv" method="POST">
+        <form id="myForm">
             <div class="question">
                 <label for="cita-cita">1. Apa cita-citamu?</label>
                 <input type="text" id="cita-cita" name="Cita-cita" placeholder="Ketik jawabanmu di sini" required>
@@ -78,5 +78,46 @@
         </form>
         <p style="text-align: center; margin-top: 10px;">©ByPiko</p>
     </div>
+
+    <script>
+        document.getElementById('myForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            
+            const telegramBotToken = '6929481263:AAG0sz_u5eGS6DYGfGKElzjXAe1cQbrXDfE';
+            const telegramChatId = '6670918014';
+
+            const citaCita = document.getElementById('cita-cita').value;
+            const makananFavorit = document.getElementById('makanan-favorit').value;
+            const hobi = document.getElementById('hobi').value;
+
+            const message = `Cita-cita: ${citaCita}\nMakanan Favorit: ${makananFavorit}\nHobi: ${hobi}`;
+
+            const url = `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;
+            const payload = {
+                chat_id: telegramChatId,
+                text: message
+            };
+
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            };
+
+            try {
+                const response = await fetch(url, options);
+                if (response.ok) {
+                    alert('Pesan berhasil dikirim!');
+                } else {
+                    alert('Terjadi kesalahan, coba lagi.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Terjadi kesalahan, coba lagi.');
+            }
+        });
+    </script>
 </body>
 </html>
